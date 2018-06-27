@@ -1,0 +1,31 @@
+{
+  "name": "festchain",
+  "version": "0.0.1",
+  "description": "DApp for booking tickets for different events",
+  "main": "index.js",
+  "dependencies": {
+    "nebulas": "^0.5.2"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-util": "latest",
+    "gulp-sass": "latest",
+    "gulp-coffee": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RostykStakhiv/festchain.git"
+  },
+  "author": "Rostyslav Stakhiv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RostykStakhiv/festchain/issues"
+  },
+  "homepage": "https://github.com/RostykStakhiv/festchain#readme"
+}
