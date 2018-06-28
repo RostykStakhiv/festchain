@@ -15,10 +15,15 @@ class FestChain {
         this.eventsMapById = new BigNumber(0);
 	}
 	
+	//Get functions
 	getNextEventId() {
         return {
             id: new BigNumber(this.eventsCount).plus(1)
         };
+	}
+	
+	//Create functions
+    createEvent(title, description) {
     }
 }
 
