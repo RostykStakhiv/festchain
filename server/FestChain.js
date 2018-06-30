@@ -1,11 +1,5 @@
 class NRC720BaseToken {
 	init(tokenName, tokenId, tokenOwnerId) {
-		LocalContractStorage.defineProperties(this, {
-			_name: null,
-			_tokenId: null,
-			_tokenOwnerId: null,
-		})
-
 		this._name = tokenName;
 		this._tokenId = tokenId;
 		this._tokenOwnerId = tokenOwnerId;
@@ -15,6 +9,10 @@ class NRC720BaseToken {
 		return this._name;
 	}
 
+	tokenId() {
+		return this.tokenId;
+	}
+
 	tokenOwnerId() {
 		return this._tokenOwnerId;
 	}
@@ -22,13 +20,9 @@ class NRC720BaseToken {
 
 class FestChainTicket extends NRC720BaseToken {
 	static kTokenName = "FestChainTicket";
+
 	init(eventId, tokenId, ownerId) {
 		super.init(FestChainTicket.kTokenName, tokenId, ownerId);
-
-		LocalContractStorage.defineProperties(this, {
-			_eventId: null,
-		});
-
 		this._eventId = eventId;
 	}
 
@@ -47,6 +41,7 @@ class FestChain {
 		LocalContractStorage.defineMapProperties(this, {
 			eventsMapById: null,
 			ticketOwnersMapById: null,
+			ticketsMapById: null,
 		});
 	}
 
@@ -57,6 +52,10 @@ class FestChain {
 	
 	//Public methods
 	buyTicket(eventId) {
+		if(!this.eventsMapById.get(eventId)) {
+			throw new Error("There is no such event!");
+		}
+
 		let buyerId = Blockchain.transaction.from;
 		let ticketOwner = this.ticketOwnersMapById.get(buyerId);
 		if(!ticketOwner) {
@@ -101,6 +100,24 @@ class FestChain {
 
 		return res;
 	}
+
+	getUserTickets(ownerId) {
+		let tickets = [];
+		let owner = this.ticketOwnersMapById.get(ownerId);
+		if(!owner) {
+			return tickets;
+		}
+
+		let ticketIds = owner.ticketIds;
+		for(let ticketId of ticketIds) {
+			let ticket = this.ticketsMapById.get(ticketId);
+			if(ticket) {
+				tickets.push(ticket);
+			}
+		}
+
+		return tickets;
+	}
 	
 	//Private methods
 	_pay(to, amount) {
@@ -116,7 +133,9 @@ class FestChain {
 	}
 
 	_createTicket(eventId, ownerId) {
-		return new FestChainTicket(eventId, this._nextTicketID(), ownerId);
+		let ticket = new FestChainTicket(eventId, this._nextTicketID(), ownerId);
+		this.ticketsMapById.set(ticket.tokenId, ticket);
+		return ticket;
 	}
 }
 
