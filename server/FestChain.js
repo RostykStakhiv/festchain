@@ -32,8 +32,22 @@ class FestChainTicket extends NRC720BaseToken {
 class FestChain {
 	constructor() {
 		LocalContractStorage.defineProperties(this, {
-			eventsCount: null,
-			ticketsCount: null,
+			eventsCount: {
+				parse: function(value) {
+				    return new BigNumber(value);
+				},
+				stringify: function(o) {
+				    return o.toString(10);
+				}
+			},
+			ticketsCount: {
+				parse: function(value) {
+				    return new BigNumber(value);
+				},
+				stringify: function(o) {
+				    return o.toString(10);
+				}
+			},
 		});
 
 		LocalContractStorage.defineMapProperties(this, {
