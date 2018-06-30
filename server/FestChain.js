@@ -1,8 +1,47 @@
-class FestChainTickets {
+class NRC720BaseToken {
+	init(tokenName, tokenId, tokenOwnerId) {
+		LocalContractStorage.defineProperties(this, {
+			_name: null,
+			_tokenId: null,
+			_tokenOwnerId: null,
+		})
+
+		this._name = tokenName;
+		this._tokenId = tokenId;
+		this._tokenOwnerId = tokenOwnerId;
+	}
+
+	name() {
+		return this._name;
+	}
+
+	tokenOwnerId() {
+		return this._tokenOwnerId;
+	}
+}
+
+class FestChainTicket extends NRC720BaseToken {
+	static kTokenName = "FestChainTicket";
+	init(eventId, tokenId, ownerId) {
+		super.init(FestChainTicket.kTokenName, tokenId, ownerId);
+
+		LocalContractStorage.defineProperties(this, {
+			_eventId: null,
+		});
+
+		this._eventId = eventId;
+	}
+
+	eventId() {
+		return this._eventId;
+	}
+}
+
+class FestChain {
 	constructor() {
-		// define fields stored to state trie
 		LocalContractStorage.defineProperties(this, {
 			eventsCount: null,
+			ticketsCount: null,
 		});
 
 		LocalContractStorage.defineMapProperties(this, {
@@ -13,21 +52,21 @@ class FestChainTickets {
 
 	init() {
 		this.eventsCount = new BigNumber(0);
+		this.ticketsCount = new BigNumber(0);
 	}
 	
 	//Public methods
 	buyTicket(eventId) {
 		let buyerId = Blockchain.transaction.from;
 		let ticketOwner = this.ticketOwnersMapById.get(buyerId);
-
-		let ticket = this._createTicket(eventId);
-
 		if(!ticketOwner) {
 			ticketOwner = {
 				id: buyerId,
 				ticketIds: new Set(),
 			}
 		}
+
+		let ticket = this._createTicket(eventId);
 
 		ticketOwner.ticketIds.add(ticket.id);
 		this.ticketOwnersMapById.set(buyerId, ticketOwner);
@@ -72,15 +111,13 @@ class FestChainTickets {
 		return new BigNumber(this.eventsCount.plus(1));
 	}
 
-	_createTicket(eventId) {
-		//Code to create ticket token
-		let ticket = {
-			id: 0,
-			eventId: eventId,
-		}
+	_nextTicketID() {
+		return new BigNumber(this.ticketsCount.plus(1));
+	}
 
-		return ticket;
+	_createTicket(eventId, ownerId) {
+		return new FestChainTicket(eventId, this._nextTicketID(), ownerId);
 	}
 }
 
-module.exports = FestChainTickets;
+module.exports = FestChain;
