@@ -19,10 +19,8 @@ class NRC720BaseToken {
 }
 
 class FestChainTicket extends NRC720BaseToken {
-	static kTokenName = "FestChainTicket";
-
 	init(eventId, tokenId, ownerId) {
-		super.init(FestChainTicket.kTokenName, tokenId, ownerId);
+		super.init("FestChainTicket", tokenId, ownerId);
 		this._eventId = eventId;
 	}
 
@@ -73,7 +71,7 @@ class FestChain {
 
 	//Create
     	createEvent(title, description, maxNumberOfTickets) {
-		let eventId = _nextEventID();
+		let eventId = this._nextEventID();
 		let creatorId = Blockchain.transaction.from;
 
 		let createdEvent = {
