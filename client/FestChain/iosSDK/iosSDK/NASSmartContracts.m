@@ -34,7 +34,7 @@ static NSString *kNASCheckUrl = NAS_CHECK_URL;
 }
 
 + (BOOL)nasNanoInstalled {
-    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:NAS_NANO_SCHEMA_URL]];
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"openapp.nasnano://virtual"]];
 }
 
 + (void)goToNasNanoAppStore {

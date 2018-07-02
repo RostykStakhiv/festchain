@@ -10,9 +10,11 @@ import UIKit
 
 class EventsVC: UITableViewController {
     
+    private let serialNumber = NASSmartContracts.randomCode(withLength: 32) ?? ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,9 +22,10 @@ class EventsVC: UITableViewController {
         
         if !NASSmartContracts.nasNanoInstalled() {
             NASSmartContracts.goToNasNanoAppStore()
+        } else {
+            //NASSmartContracts.call(withMethod: kGetAllEvents, andArgs: [], payNas: 0, toAddress: kSmartContractAddress, withSerialNumber: serialNumber, forGoodsName: kEventGood, andDesc: kGetAllEventsDesc)
+            NASApi.callFuction(from: "n1KgUaJcRmcNBoH2xFYHCHJCgrGToeZo8m1", to: kSmartContractAddress, withValue: <#T##NSNumber!#>, andNonce: <#T##Int#>, andGasPrice: <#T##NSNumber!#>, andGasLimit: <#T##NSNumber!#>, andContract: <#T##[AnyHashable : Any]!#>, withCompletionHandler: <#T##(([AnyHashable : Any]?) -> Void)!##(([AnyHashable : Any]?) -> Void)!##([AnyHashable : Any]?) -> Void#>, errorHandler: <#T##((String?) -> Void)!##((String?) -> Void)!##(String?) -> Void#>)
         }
-        
-        
     }
     
     //MARK: UITableViewDataSource
@@ -34,9 +37,7 @@ class EventsVC: UITableViewController {
         return 1
     }
     
-    //MARK: IBActions
-    @IBAction func addEventTapped() {
-        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
-
 }
