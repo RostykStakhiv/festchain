@@ -51,7 +51,14 @@ class FestChain {
 		});
 
 		LocalContractStorage.defineMapProperties(this, {
-			eventsMapById: null,
+			eventsMapById: {
+				parse: function(value) {
+				    return JSON.parse(value);
+				},
+				stringify: function(o) {
+				    return JSON.stringify(o);
+				}
+			    },
 			ticketOwnersMapById: {
 				parse: function(value) {
 				    return JSON.parse(value);
@@ -60,7 +67,14 @@ class FestChain {
 				    return JSON.stringify(o);
 				}
 			    },
-			ticketsMapById: null,
+			ticketsMapById: {
+				parse: function(value) {
+				    return JSON.parse(value);
+				},
+				stringify: function(o) {
+				    return JSON.stringify(o);
+				}
+			    },
 		});
 	}
 
@@ -77,14 +91,18 @@ class FestChain {
 			throw new Error("There is no such event!");
 		}
 
+		console.log(`buyTicket: Fetched event = ${JSON.stringify(event)}`);
+		console.log(`buyTicket: Event owner = ${event.ownerId}`);
+
 		let buyerId = Blockchain.transaction.from;
 		let value = new BigNumber(Blockchain.transaction.value);
 
-		if(value.div(1e18).gt(event.ticketPrice)) {
+		let amountPayedInNAS = value.div(1e18);
+		if(amountPayedInNAS.gt(event.ticketPrice)) {
 			throw new Error("You try to pay too much!");
 		}
 
-		if(value.div(1e18).lt(event.ticketPrice)) {
+		if(amountPayedInNAS.lt(event.ticketPrice)) {
 			throw new Error("Not enough NAS to purchase ticket!");
 		}
 
@@ -99,12 +117,16 @@ class FestChain {
 		console.log(`buyTicket: Ticket owner = ${JSON.stringify(ticketOwner)}`);
 
 		let ticket = this._createTicket(eventId, buyerId);
+		event.ticketsSold = event.ticketsSold + 1;
 
 		console.log(`buyTicket: Created Ticket = ${JSON.stringify(ticket)}`);
-		ticketOwner.ticketIds.push(ticket.id);
 
+		ticketOwner.ticketIds.push(ticket.id);
 		console.log(`Ticket owner after buying ticket: ${JSON.stringify(ticketOwner)}`);
 		this.ticketOwnersMapById.set(buyerId, ticketOwner);
+
+		console.log(`buyTicket: Event after bought ticket = ${JSON.stringify(event)}`);
+		this._pay(event.creatorId, amountPayedInNAS);
 	}
 
 	//Get
@@ -116,6 +138,11 @@ class FestChain {
 		}
 
 		return res;
+	}
+
+	getEventById(eventId) {
+		let event = this.eventsMapById.get(eventId);
+		return (event) ? event : {};
 	}
 
 	getUserTickets(ownerId) {
@@ -159,7 +186,7 @@ class FestChain {
 	}
 
 	//Create
-    	createEvent(title, description, ticketPrice, maxNumberOfTickets) {
+    	createEvent(title, description, ticketPrice, maxNumberOfTickets, startDate) {
 		let eventId = this._nextEventID();
 		let creatorId = Blockchain.transaction.from;
 
@@ -169,8 +196,9 @@ class FestChain {
             		title: title,
 			description: description,
 			maxNumberOfTickets: new BigNumber(maxNumberOfTickets),
+			startDate: startDate,
 			ticketPrice: new BigNumber(ticketPrice),
-			ticketsSold: new BigNumber(0),
+			ticketsSold: 0,
 			creationDate: Date.now(),
 		};
 		
