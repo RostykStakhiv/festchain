@@ -52,7 +52,14 @@ class FestChain {
 
 		LocalContractStorage.defineMapProperties(this, {
 			eventsMapById: null,
-			ticketOwnersMapById: null,
+			ticketOwnersMapById: {
+				parse: function(value) {
+				    return JSON.parse(value);
+				},
+				stringify: function(o) {
+				    return JSON.stringify(o);
+				}
+			    },
 			ticketsMapById: null,
 		});
 	}
@@ -64,42 +71,40 @@ class FestChain {
 	
 	//Public methods
 	buyTicket(eventId) {
-		if(!this.eventsMapById.get(eventId)) {
+		let event = this.eventsMapById.get(eventId);
+
+		if(!event) {
 			throw new Error("There is no such event!");
 		}
 
 		let buyerId = Blockchain.transaction.from;
+		let value = new BigNumber(Blockchain.transaction.value);
+
+		if(value.div(1e18).gt(event.ticketPrice)) {
+			throw new Error("You try to pay too much!");
+		}
+
+		if(value.div(1e18).lt(event.ticketPrice)) {
+			throw new Error("Not enough NAS to purchase ticket!");
+		}
+
 		let ticketOwner = this.ticketOwnersMapById.get(buyerId);
 		if(!ticketOwner) {
 			ticketOwner = {
 				id: buyerId,
-				ticketIds: new Set(),
+				ticketIds: [],
 			}
 		}
 
-		let ticket = this._createTicket(eventId);
+		console.log(`buyTicket: Ticket owner = ${JSON.stringify(ticketOwner)}`);
 
-		ticketOwner.ticketIds.add(ticket.id);
+		let ticket = this._createTicket(eventId, buyerId);
+
+		console.log(`buyTicket: Created Ticket = ${JSON.stringify(ticket)}`);
+		ticketOwner.ticketIds.push(ticket.id);
+
+		console.log(`Ticket owner after buying ticket: ${JSON.stringify(ticketOwner)}`);
 		this.ticketOwnersMapById.set(buyerId, ticketOwner);
-	}
-
-	//Create
-    	createEvent(title, description, maxNumberOfTickets) {
-		let eventId = this._nextEventID();
-		let creatorId = Blockchain.transaction.from;
-
-		let createdEvent = {
-            		id: eventId,
-            		creatorId: creatorId,
-            		title: title,
-			description: description,
-			maxNumberOfTickets: maxNumberOfTickets,
-			ticketsSold: 0,
-			creationDate: Date.now(),
-		};
-		
-		this.eventsMapById.set(eventId, createdEvent)
-		this.eventsCount = eventId;
 	}
 
 	//Get
@@ -121,14 +126,57 @@ class FestChain {
 		}
 
 		let ticketIds = owner.ticketIds;
-		for(let ticketId of ticketIds) {
+		ticketIds.forEach((ticketId) => {
 			let ticket = this.ticketsMapById.get(ticketId);
+			if(ticket) {
+				tickets.push(ticket);
+			}
+		});
+
+		return tickets;
+	}
+
+	getTicketOwnerById(ownerId) {
+		let owner = this.ticketOwnersMapById.get(ownerId);
+		return (owner) ? owner : {};
+	}
+
+	getTicketById(ticketId) {
+		let ticket = this.ticketsMapById.get(ticketId);
+		return (ticket) ? ticket : {};
+	}
+
+	getAllTickets() {
+		let tickets = [];
+		for(let i = 1; i <= this.ticketsCount; ++i) {
+			let ticket = this.ticketsMapById.get(i);
 			if(ticket) {
 				tickets.push(ticket);
 			}
 		}
 
 		return tickets;
+	}
+
+	//Create
+    	createEvent(title, description, ticketPrice, maxNumberOfTickets) {
+		let eventId = this._nextEventID();
+		let creatorId = Blockchain.transaction.from;
+
+		let createdEvent = {
+            		id: eventId,
+            		creatorId: creatorId,
+            		title: title,
+			description: description,
+			maxNumberOfTickets: new BigNumber(maxNumberOfTickets),
+			ticketPrice: new BigNumber(ticketPrice),
+			ticketsSold: new BigNumber(0),
+			creationDate: Date.now(),
+		};
+		
+		console.log(createdEvent.toString());
+		this.eventsMapById.set(eventId, createdEvent)
+		this.eventsCount = eventId;
 	}
 	
 	//Private methods
@@ -145,8 +193,19 @@ class FestChain {
 	}
 
 	_createTicket(eventId, ownerId) {
-		let ticket = new FestChainTicket(eventId, this._nextTicketID(), ownerId);
-		this.ticketsMapById.set(ticket.tokenId, ticket);
+		console.log("Create ticket method");
+		
+		let nextTicketId = this._nextTicketID();
+		let ticket = {
+			id: nextTicketId,
+			ownerId: ownerId,
+			eventId: eventId,
+		};
+
+		this.ticketsCount = nextTicketId;
+
+		console.log(`Created ticket: ${JSON.stringify(ticket)}, ticketId = ${ticket.id}`);
+		this.ticketsMapById.set(ticket.id, ticket);
 		return ticket;
 	}
 }
