@@ -16,7 +16,18 @@
 		84CE87DE20EA3F0100F496D8 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE87DB20EA3F0000F496D8 /* EventsVC.swift */; };
 		84CE87E020EA3F2800F496D8 /* EventTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE87DF20EA3F2800F496D8 /* EventTVCell.swift */; };
 		84CE87E320EA425B00F496D8 /* TicketTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE87E220EA425B00F496D8 /* TicketTVCell.swift */; };
+		84CE87F420EA448000F496D8 /* libiosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CE87F220EA447300F496D8 /* libiosSDK.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84CE87F120EA447300F496D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84CE87ED20EA447300F496D8 /* iosSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C54D3D0E20BC47B90033C2B3;
+			remoteInfo = iosSDK;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		84CE87BB20EA34A000F496D8 /* FestChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +41,8 @@
 		84CE87DB20EA3F0000F496D8 /* EventsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		84CE87DF20EA3F2800F496D8 /* EventTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTVCell.swift; sourceTree = "<group>"; };
 		84CE87E220EA425B00F496D8 /* TicketTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTVCell.swift; sourceTree = "<group>"; };
+		84CE87ED20EA447300F496D8 /* iosSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iosSDK.xcodeproj; path = iosSDK/iosSDK.xcodeproj; sourceTree = "<group>"; };
+		84CE87F520EA451100F496D8 /* FestChain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FestChain-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CE87F420EA448000F496D8 /* libiosSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +60,10 @@
 		84CE87B220EA34A000F496D8 = {
 			isa = PBXGroup;
 			children = (
+				84CE87ED20EA447300F496D8 /* iosSDK.xcodeproj */,
 				84CE87BD20EA34A000F496D8 /* FestChain */,
 				84CE87BC20EA34A000F496D8 /* Products */,
+				84CE87F320EA448000F496D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +85,7 @@
 				84CE87C520EA34A800F496D8 /* Assets.xcassets */,
 				84CE87C720EA34A800F496D8 /* LaunchScreen.storyboard */,
 				84CE87CA20EA34A800F496D8 /* Info.plist */,
+				84CE87F520EA451100F496D8 /* FestChain-Bridging-Header.h */,
 			);
 			path = FestChain;
 			sourceTree = "<group>";
@@ -124,6 +141,21 @@
 			path = TicketTVCell;
 			sourceTree = "<group>";
 		};
+		84CE87EE20EA447300F496D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84CE87F220EA447300F496D8 /* libiosSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84CE87F320EA448000F496D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,12 +202,28 @@
 			mainGroup = 84CE87B220EA34A000F496D8;
 			productRefGroup = 84CE87BC20EA34A000F496D8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 84CE87EE20EA447300F496D8 /* Products */;
+					ProjectRef = 84CE87ED20EA447300F496D8 /* iosSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				84CE87BA20EA34A000F496D8 /* FestChain */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		84CE87F220EA447300F496D8 /* libiosSDK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiosSDK.a;
+			remoteRef = 84CE87F120EA447300F496D8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84CE87B920EA34A000F496D8 /* Resources */ = {
@@ -346,6 +394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KS22VBNNP;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iosSDK/iosSDK\"";
 				INFOPLIST_FILE = FestChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -354,6 +403,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rstakhiv.FestChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FestChain/FestChain-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -365,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KS22VBNNP;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iosSDK/iosSDK\"";
 				INFOPLIST_FILE = FestChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rstakhiv.FestChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FestChain/FestChain-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
