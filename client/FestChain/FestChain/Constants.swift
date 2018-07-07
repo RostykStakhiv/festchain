@@ -9,7 +9,8 @@
 import Foundation
 
 //MARK: Contract
-let kSmartContractAddress = "n1yRPu3FdnScqDk2ZFfBsWmh64X9PaXKhuH"
+let kTestnetSmartContractAddress = "n1q7cJKHgs2HYzLy1n5QW4x7NZKNAYxJmpf"
+let kMainnetSmartContractAddress = "n1oietNKUNMdNZcAKCC78zt4MJ8jGfZAkmr"
 
 //MARK: Contract Methods
 let kCreateEventMethodName = "createEvent"

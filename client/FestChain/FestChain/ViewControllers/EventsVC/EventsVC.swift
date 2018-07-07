@@ -11,21 +11,11 @@ import UIKit
 class EventsVC: UITableViewController {
     
     private let serialNumber = NASSmartContracts.randomCode(withLength: 32) ?? ""
+    private let festChainSCFacade = SCFacade(testnetContractAddress: kTestnetSmartContractAddress, mainnetContractAddress: kMainnetSmartContractAddress)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if !NASSmartContracts.nasNanoInstalled() {
-            NASSmartContracts.goToNasNanoAppStore()
-        } else {
-            //NASSmartContracts.call(withMethod: kGetAllEvents, andArgs: [], payNas: 0, toAddress: kSmartContractAddress, withSerialNumber: serialNumber, forGoodsName: kEventGood, andDesc: kGetAllEventsDesc)
-            NASApi.callFuction(from: "n1KgUaJcRmcNBoH2xFYHCHJCgrGToeZo8m1", to: kSmartContractAddress, withValue: <#T##NSNumber!#>, andNonce: <#T##Int#>, andGasPrice: <#T##NSNumber!#>, andGasLimit: <#T##NSNumber!#>, andContract: <#T##[AnyHashable : Any]!#>, withCompletionHandler: <#T##(([AnyHashable : Any]?) -> Void)!##(([AnyHashable : Any]?) -> Void)!##([AnyHashable : Any]?) -> Void#>, errorHandler: <#T##((String?) -> Void)!##((String?) -> Void)!##(String?) -> Void#>)
-        }
     }
     
     //MARK: UITableViewDataSource
@@ -39,5 +29,15 @@ class EventsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    //MARK: IBActions
+    @IBAction func getEventsTapped() {
+        let error = festChainSCFacade.callSmartContractMethod(withName: kGetAllEvents, andArgs: [], payNAS: 0, withSerialNumber: nil, forGoodsName: kEventGood, andDesc: kGetAllEventsDesc)
+        
+        guard error == nil else {
+            print("Error occured: \(String(describing: error))")
+            return
+        }
     }
 }

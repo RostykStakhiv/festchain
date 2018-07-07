@@ -89,6 +89,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="hTA-wB-Qtx">
+                        <barButtonItem key="leftBarButtonItem" title="Get Events" id="Heh-KM-yfT">
+                            <connections>
+                                <action selector="getEventsTapped" destination="a3O-ut-0vD" id="kZB-MF-Vfs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Event" id="YxN-Zx-Vs7">
                             <connections>
                                 <segue destination="QFK-X8-ISa" kind="show" id="SbJ-MU-MpQ"/>
@@ -107,7 +112,42 @@
                     <view key="view" contentMode="scaleToFill" id="yse-dD-a5W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbG-dx-XvO">
+                                <rect key="frame" x="16" y="60" width="343" height="107"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-wS-vvX">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WR-tR-EC8">
+                                        <rect key="frame" x="0.0" y="37" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8WR-tR-EC8" firstAttribute="leading" secondItem="EWY-wS-vvX" secondAttribute="leading" id="9Wj-gx-HbF"/>
+                                    <constraint firstItem="8WR-tR-EC8" firstAttribute="trailing" secondItem="EWY-wS-vvX" secondAttribute="trailing" id="DcJ-81-eIc"/>
+                                    <constraint firstItem="EWY-wS-vvX" firstAttribute="top" secondItem="DbG-dx-XvO" secondAttribute="top" id="FJ8-H0-tc1"/>
+                                    <constraint firstItem="EWY-wS-vvX" firstAttribute="leading" secondItem="DbG-dx-XvO" secondAttribute="leading" id="a9n-so-8fl"/>
+                                    <constraint firstItem="8WR-tR-EC8" firstAttribute="top" secondItem="EWY-wS-vvX" secondAttribute="bottom" constant="16" id="bum-Xg-AhI"/>
+                                    <constraint firstAttribute="trailing" secondItem="EWY-wS-vvX" secondAttribute="trailing" id="v8P-LN-7WO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DbG-dx-XvO" firstAttribute="top" secondItem="yse-dD-a5W" secondAttribute="top" constant="16" id="0QR-oV-mIN"/>
+                            <constraint firstItem="DbG-dx-XvO" firstAttribute="centerX" secondItem="yse-dD-a5W" secondAttribute="centerX" id="CTq-mA-EJM"/>
+                            <constraint firstItem="DbG-dx-XvO" firstAttribute="leading" secondItem="yse-dD-a5W" secondAttribute="leading" constant="16" id="DOO-S3-ivp"/>
+                            <constraint firstItem="DbG-dx-XvO" firstAttribute="top" secondItem="yse-dD-a5W" secondAttribute="top" constant="16" id="gFQ-pv-bKH"/>
+                            <constraint firstAttribute="trailing" secondItem="DbG-dx-XvO" secondAttribute="trailing" constant="16" id="vvB-th-Pr8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O08-D8-aop"/>
                     </view>
                 </viewController>

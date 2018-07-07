@@ -1,34 +1,3 @@
-class NRC720BaseToken {
-	init(tokenName, tokenId, tokenOwnerId) {
-		this._name = tokenName;
-		this._tokenId = tokenId;
-		this._tokenOwnerId = tokenOwnerId;
-	}
-
-	name() {
-		return this._name;
-	}
-
-	tokenId() {
-		return this.tokenId;
-	}
-
-	tokenOwnerId() {
-		return this._tokenOwnerId;
-	}
-}
-
-class FestChainTicket extends NRC720BaseToken {
-	init(eventId, tokenId, ownerId) {
-		super.init("FestChainTicket", tokenId, ownerId);
-		this._eventId = eventId;
-	}
-
-	eventId() {
-		return this._eventId;
-	}
-}
-
 class FestChain {
 	constructor() {
 		LocalContractStorage.defineProperties(this, {
