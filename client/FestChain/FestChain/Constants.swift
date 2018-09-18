@@ -28,3 +28,7 @@ let kOwnerGood = "Owner"
 let kCreateEventDesc = "Create Event"
 let kGetAllEventsDesc = "Get All Events"
 let kGetUserTicketsDesc = "Get User Tickets"
+
+struct GoodleMapsContstants {
+    static let googleMapsAPIKey = "AIzaSyCDTFpkFJ7d51nSZp6Pgzi4ngHzn2Oga7w"
+}

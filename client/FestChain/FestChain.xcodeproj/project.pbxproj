@@ -7,6 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843124DB20F39A1D005A8799 /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843124DA20F39A1C005A8799 /* SelectAddressVC.swift */; };
+		8492251520F0ED0A00C8ED6A /* KMPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492251420F0ED0A00C8ED6A /* KMPlaceholderTextView.framework */; };
+		8492251820F0EE8800C8ED6A /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492251720F0EE8800C8ED6A /* CreateEventVC.swift */; };
+		8492251A20F0FA3300C8ED6A /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492251920F0FA3300C8ED6A /* SwiftDate.framework */; };
+		8492251D20F216A500C8ED6A /* AddressAutocompleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492251C20F216A500C8ED6A /* AddressAutocompleter.swift */; };
+		8492253320F21AAA00C8ED6A /* AddressInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492252A20F21AAA00C8ED6A /* AddressInputView.swift */; };
+		8492253420F21AAA00C8ED6A /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8492252C20F21AAA00C8ED6A /* AddressTableViewCell.xib */; };
+		8492253520F21AAA00C8ED6A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492252D20F21AAA00C8ED6A /* AddressTableViewCell.swift */; };
+		8492253620F21AAA00C8ED6A /* AddressMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492252F20F21AAA00C8ED6A /* AddressMarkerView.swift */; };
+		8492253720F21AAA00C8ED6A /* AddressMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8492253020F21AAA00C8ED6A /* AddressMarkerView.xib */; };
+		8492253820F21AAA00C8ED6A /* AddressInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8492253120F21AAA00C8ED6A /* AddressInputView.xib */; };
+		8492253920F21AAA00C8ED6A /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492253220F21AAA00C8ED6A /* IBDesignableView.swift */; };
+		8492253B20F21C4800C8ED6A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492253A20F21C4700C8ED6A /* Accelerate.framework */; };
+		8492253D20F21C5600C8ED6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492253C20F21C5600C8ED6A /* CoreData.framework */; };
+		8492253F20F21C6200C8ED6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492253E20F21C6200C8ED6A /* CoreGraphics.framework */; };
+		8492254120F21C6A00C8ED6A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254020F21C6A00C8ED6A /* CoreImage.framework */; };
+		8492254320F21C7D00C8ED6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254220F21C7D00C8ED6A /* CoreLocation.framework */; };
+		8492254520F21C8800C8ED6A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254420F21C8800C8ED6A /* CoreTelephony.framework */; };
+		8492254720F21C9000C8ED6A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254620F21C9000C8ED6A /* CoreText.framework */; };
+		8492254920F21C9700C8ED6A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254820F21C9700C8ED6A /* GLKit.framework */; };
+		8492254B20F21C9E00C8ED6A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254A20F21C9E00C8ED6A /* ImageIO.framework */; };
+		8492254D20F21CB300C8ED6A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254C20F21CB300C8ED6A /* libc++.tbd */; };
+		8492254F20F21CBF00C8ED6A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492254E20F21CBF00C8ED6A /* libz.tbd */; };
+		8492255120F21CC700C8ED6A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255020F21CC700C8ED6A /* OpenGLES.framework */; };
+		8492255320F21CCF00C8ED6A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255220F21CCF00C8ED6A /* QuartzCore.framework */; };
+		8492255520F21CD700C8ED6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255420F21CD700C8ED6A /* SystemConfiguration.framework */; };
+		8492255720F21CE200C8ED6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255620F21CE200C8ED6A /* UIKit.framework */; };
+		8492255E20F220A600C8ED6A /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255C20F220A500C8ED6A /* GooglePlaces.framework */; };
+		8492255F20F220A600C8ED6A /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492255D20F220A600C8ED6A /* GoogleMapsBase.framework */; };
+		8492256120F220E900C8ED6A /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8492256020F220E900C8ED6A /* GooglePlaces.bundle */; };
+		8492256820F2324200C8ED6A /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492256620F2324100C8ED6A /* GoogleMapsCore.framework */; };
+		8492256920F2324200C8ED6A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8492256720F2324100C8ED6A /* GoogleMaps.framework */; };
+		8492256B20F24D8E00C8ED6A /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8492256A20F24D8D00C8ED6A /* GoogleMaps.bundle */; };
 		84CE87BF20EA34A000F496D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE87BE20EA34A000F496D8 /* AppDelegate.swift */; };
 		84CE87C420EA34A000F496D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE87C220EA34A000F496D8 /* Main.storyboard */; };
 		84CE87C620EA34A800F496D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CE87C520EA34A800F496D8 /* Assets.xcassets */; };
@@ -32,6 +65,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		843124DA20F39A1C005A8799 /* SelectAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
+		8492251420F0ED0A00C8ED6A /* KMPlaceholderTextView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KMPlaceholderTextView.framework; path = Carthage/Build/iOS/KMPlaceholderTextView.framework; sourceTree = "<group>"; };
+		8492251720F0EE8800C8ED6A /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		8492251920F0FA3300C8ED6A /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		8492251C20F216A500C8ED6A /* AddressAutocompleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAutocompleter.swift; sourceTree = "<group>"; };
+		8492252A20F21AAA00C8ED6A /* AddressInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInputView.swift; sourceTree = "<group>"; };
+		8492252C20F21AAA00C8ED6A /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		8492252D20F21AAA00C8ED6A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		8492252F20F21AAA00C8ED6A /* AddressMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressMarkerView.swift; sourceTree = "<group>"; };
+		8492253020F21AAA00C8ED6A /* AddressMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressMarkerView.xib; sourceTree = "<group>"; };
+		8492253120F21AAA00C8ED6A /* AddressInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressInputView.xib; sourceTree = "<group>"; };
+		8492253220F21AAA00C8ED6A /* IBDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		8492253A20F21C4700C8ED6A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8492253C20F21C5600C8ED6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8492253E20F21C6200C8ED6A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8492254020F21C6A00C8ED6A /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		8492254220F21C7D00C8ED6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8492254420F21C8800C8ED6A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8492254620F21C9000C8ED6A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		8492254820F21C9700C8ED6A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8492254A20F21C9E00C8ED6A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		8492254C20F21CB300C8ED6A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		8492254E20F21CBF00C8ED6A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		8492255020F21CC700C8ED6A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8492255220F21CCF00C8ED6A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8492255420F21CD700C8ED6A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8492255620F21CE200C8ED6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8492255C20F220A500C8ED6A /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		8492255D20F220A600C8ED6A /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		8492256020F220E900C8ED6A /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		8492256620F2324100C8ED6A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		8492256720F2324100C8ED6A /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		8492256A20F24D8D00C8ED6A /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "FestChain/Third-party Libraries/GoogleSDK/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		84CE87BB20EA34A000F496D8 /* FestChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FestChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CE87BE20EA34A000F496D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CE87C320EA34A000F496D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,16 +120,111 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8492255720F21CE200C8ED6A /* UIKit.framework in Frameworks */,
+				8492255520F21CD700C8ED6A /* SystemConfiguration.framework in Frameworks */,
+				8492255320F21CCF00C8ED6A /* QuartzCore.framework in Frameworks */,
+				8492255120F21CC700C8ED6A /* OpenGLES.framework in Frameworks */,
+				8492254F20F21CBF00C8ED6A /* libz.tbd in Frameworks */,
+				8492255F20F220A600C8ED6A /* GoogleMapsBase.framework in Frameworks */,
+				8492254D20F21CB300C8ED6A /* libc++.tbd in Frameworks */,
+				8492254B20F21C9E00C8ED6A /* ImageIO.framework in Frameworks */,
+				8492254920F21C9700C8ED6A /* GLKit.framework in Frameworks */,
+				8492254720F21C9000C8ED6A /* CoreText.framework in Frameworks */,
+				8492256820F2324200C8ED6A /* GoogleMapsCore.framework in Frameworks */,
+				8492254520F21C8800C8ED6A /* CoreTelephony.framework in Frameworks */,
+				8492254320F21C7D00C8ED6A /* CoreLocation.framework in Frameworks */,
+				8492254120F21C6A00C8ED6A /* CoreImage.framework in Frameworks */,
+				8492255E20F220A600C8ED6A /* GooglePlaces.framework in Frameworks */,
+				8492253F20F21C6200C8ED6A /* CoreGraphics.framework in Frameworks */,
+				8492253D20F21C5600C8ED6A /* CoreData.framework in Frameworks */,
+				8492253B20F21C4800C8ED6A /* Accelerate.framework in Frameworks */,
+				8492256920F2324200C8ED6A /* GoogleMaps.framework in Frameworks */,
 				84CE87F420EA448000F496D8 /* libiosSDK.a in Frameworks */,
+				8492251520F0ED0A00C8ED6A /* KMPlaceholderTextView.framework in Frameworks */,
+				8492251A20F0FA3300C8ED6A /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8492251220F0E91100C8ED6A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		8492251B20F2167B00C8ED6A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8492251C20F216A500C8ED6A /* AddressAutocompleter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8492251E20F2179300C8ED6A /* Third-party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8492251F20F217AE00C8ED6A /* GoogleSDK */,
+			);
+			path = "Third-party Libraries";
+			sourceTree = "<group>";
+		};
+		8492251F20F217AE00C8ED6A /* GoogleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				8492256720F2324100C8ED6A /* GoogleMaps.framework */,
+				8492256620F2324100C8ED6A /* GoogleMapsCore.framework */,
+				8492256020F220E900C8ED6A /* GooglePlaces.bundle */,
+				8492255D20F220A600C8ED6A /* GoogleMapsBase.framework */,
+				8492255C20F220A500C8ED6A /* GooglePlaces.framework */,
+			);
+			path = GoogleSDK;
+			sourceTree = "<group>";
+		};
+		8492252820F21AAA00C8ED6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8492252920F21AAA00C8ED6A /* AddressInputView */,
+				8492253220F21AAA00C8ED6A /* IBDesignableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8492252920F21AAA00C8ED6A /* AddressInputView */ = {
+			isa = PBXGroup;
+			children = (
+				8492252A20F21AAA00C8ED6A /* AddressInputView.swift */,
+				8492252B20F21AAA00C8ED6A /* AddressTableViewCell */,
+				8492252E20F21AAA00C8ED6A /* AddressMarkerView */,
+				8492253020F21AAA00C8ED6A /* AddressMarkerView.xib */,
+				8492253120F21AAA00C8ED6A /* AddressInputView.xib */,
+			);
+			path = AddressInputView;
+			sourceTree = "<group>";
+		};
+		8492252B20F21AAA00C8ED6A /* AddressTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8492252C20F21AAA00C8ED6A /* AddressTableViewCell.xib */,
+				8492252D20F21AAA00C8ED6A /* AddressTableViewCell.swift */,
+			);
+			path = AddressTableViewCell;
+			sourceTree = "<group>";
+		};
+		8492252E20F21AAA00C8ED6A /* AddressMarkerView */ = {
+			isa = PBXGroup;
+			children = (
+				8492252F20F21AAA00C8ED6A /* AddressMarkerView.swift */,
+			);
+			path = AddressMarkerView;
+			sourceTree = "<group>";
+		};
 		84CE87B220EA34A000F496D8 = {
 			isa = PBXGroup;
 			children = (
+				8492256A20F24D8D00C8ED6A /* GoogleMaps.bundle */,
 				84CE87ED20EA447300F496D8 /* iosSDK.xcodeproj */,
 				84CE87BD20EA34A000F496D8 /* FestChain */,
 				84CE87BC20EA34A000F496D8 /* Products */,
@@ -82,6 +243,9 @@
 		84CE87BD20EA34A000F496D8 /* FestChain */ = {
 			isa = PBXGroup;
 			children = (
+				8492251E20F2179300C8ED6A /* Third-party Libraries */,
+				8492252820F21AAA00C8ED6A /* Views */,
+				8492251B20F2167B00C8ED6A /* Helpers */,
 				84CE87D720EA39AB00F496D8 /* NavigationControllers */,
 				84CE87D220EA396000F496D8 /* ViewControllers */,
 				84CE87BE20EA34A000F496D8 /* AppDelegate.swift */,
@@ -116,7 +280,10 @@
 		84CE87DA20EA3F0000F496D8 /* EventsVC */ = {
 			isa = PBXGroup;
 			children = (
+				843124DA20F39A1C005A8799 /* SelectAddressVC.swift */,
 				84CE87DB20EA3F0000F496D8 /* EventsVC.swift */,
+				8492251720F0EE8800C8ED6A /* CreateEventVC.swift */,
+				8492251220F0E91100C8ED6A /* CustomViews */,
 				84CE87DC20EA3F0000F496D8 /* TableViewCells */,
 			);
 			path = EventsVC;
@@ -158,6 +325,23 @@
 		84CE87F320EA448000F496D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8492255620F21CE200C8ED6A /* UIKit.framework */,
+				8492255420F21CD700C8ED6A /* SystemConfiguration.framework */,
+				8492255220F21CCF00C8ED6A /* QuartzCore.framework */,
+				8492255020F21CC700C8ED6A /* OpenGLES.framework */,
+				8492254E20F21CBF00C8ED6A /* libz.tbd */,
+				8492254C20F21CB300C8ED6A /* libc++.tbd */,
+				8492254A20F21C9E00C8ED6A /* ImageIO.framework */,
+				8492254820F21C9700C8ED6A /* GLKit.framework */,
+				8492254620F21C9000C8ED6A /* CoreText.framework */,
+				8492254420F21C8800C8ED6A /* CoreTelephony.framework */,
+				8492254220F21C7D00C8ED6A /* CoreLocation.framework */,
+				8492254020F21C6A00C8ED6A /* CoreImage.framework */,
+				8492253E20F21C6200C8ED6A /* CoreGraphics.framework */,
+				8492253C20F21C5600C8ED6A /* CoreData.framework */,
+				8492253A20F21C4700C8ED6A /* Accelerate.framework */,
+				8492251920F0FA3300C8ED6A /* SwiftDate.framework */,
+				8492251420F0ED0A00C8ED6A /* KMPlaceholderTextView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +356,7 @@
 				84CE87B720EA34A000F496D8 /* Sources */,
 				84CE87B820EA34A000F496D8 /* Frameworks */,
 				84CE87B920EA34A000F496D8 /* Resources */,
+				8492251620F0EDA000C8ED6A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,27 +421,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8492253820F21AAA00C8ED6A /* AddressInputView.xib in Resources */,
+				8492253720F21AAA00C8ED6A /* AddressMarkerView.xib in Resources */,
 				84CE87C920EA34A800F496D8 /* LaunchScreen.storyboard in Resources */,
 				84CE87C620EA34A800F496D8 /* Assets.xcassets in Resources */,
+				8492253420F21AAA00C8ED6A /* AddressTableViewCell.xib in Resources */,
 				84CE87C420EA34A000F496D8 /* Main.storyboard in Resources */,
+				8492256B20F24D8E00C8ED6A /* GoogleMaps.bundle in Resources */,
+				8492256120F220E900C8ED6A /* GooglePlaces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8492251620F0EDA000C8ED6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KMPlaceholderTextView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84CE87B720EA34A000F496D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8492253320F21AAA00C8ED6A /* AddressInputView.swift in Sources */,
 				84CE87BF20EA34A000F496D8 /* AppDelegate.swift in Sources */,
 				84CE87E020EA3F2800F496D8 /* EventTVCell.swift in Sources */,
+				8492253920F21AAA00C8ED6A /* IBDesignableView.swift in Sources */,
 				84CE87DE20EA3F0100F496D8 /* EventsVC.swift in Sources */,
+				8492251820F0EE8800C8ED6A /* CreateEventVC.swift in Sources */,
 				84F500F520EA8D06002B67E9 /* SCFacade.swift in Sources */,
+				8492253520F21AAA00C8ED6A /* AddressTableViewCell.swift in Sources */,
+				8492251D20F216A500C8ED6A /* AddressAutocompleter.swift in Sources */,
 				84CE87D620EA397C00F496D8 /* MyTicketsVC.swift in Sources */,
 				84CE87F920EA47D200F496D8 /* Constants.swift in Sources */,
 				84CE87D920EA39C200F496D8 /* EventsNC.swift in Sources */,
+				8492253620F21AAA00C8ED6A /* AddressMarkerView.swift in Sources */,
 				84CE87E320EA425B00F496D8 /* TicketTVCell.swift in Sources */,
+				843124DB20F39A1D005A8799 /* SelectAddressVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +551,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -389,6 +605,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -402,6 +619,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KS22VBNNP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(inherited)",
+					"$(PROJECT_DIR)/FestChain/Third-party\\ Libraries/GoogleSDK",
+					"$(PROJECT_DIR)/FestChain/Third-party\\ Libraries/GoogleSDK",
+					"$(SRCROOT)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iosSDK/iosSDK\"";
 				INFOPLIST_FILE = FestChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -409,6 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rstakhiv.FestChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FestChain/FestChain-Bridging-Header.h";
@@ -423,6 +648,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KS22VBNNP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(inherited)",
+					"$(PROJECT_DIR)/FestChain/Third-party\\ Libraries/GoogleSDK",
+					"$(PROJECT_DIR)/FestChain/Third-party\\ Libraries/GoogleSDK",
+					"$(SRCROOT)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/iosSDK/iosSDK\"";
 				INFOPLIST_FILE = FestChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -430,6 +662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rstakhiv.FestChain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FestChain/FestChain-Bridging-Header.h";

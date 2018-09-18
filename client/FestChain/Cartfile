@@ -1,0 +1,3 @@
+github "MoZhouqi/KMPlaceholderTextView" >= 1.3
+github "malcommac/SwiftDate" ~> 5.0
+github "hackiftekhar/IQKeyboardManager"

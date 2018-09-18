@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.3.0",
+  "iOS" : [
+    {
+      "name" : "KMPlaceholderTextView",
+      "hash" : "68f65dabc35d92b47ca006a9d1db34646c2e62dc5fc356b152af345974a6666f"
+    }
+  ]
+}
